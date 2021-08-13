@@ -1,11 +1,15 @@
-from flask import Flask
+from flask import Flask, json
 
 app = Flask(__name__)
-@app.route('/', methods=["GET"])
-def home():
-	user_request = flask.request.json
-	passSize = user_request["Pass-Size"]
-	return generate(passSize)
+@app.route('/<int:length>', methods=["GET", "POST"])
+def home(length):
+	password = generate(length)
+	json_data = {
+		"Password": password
+	}
+	response = json.jsonify(json_data)
+	response.headers.add("Access-Control-Allow-Origin", "*")
+	return response
 
 import random
 import string_utils
