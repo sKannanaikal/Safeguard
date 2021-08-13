@@ -1,7 +1,7 @@
 var passlen = document.getElementById("passSize");
 var display = document.getElementById("passLenDisplay");
 
-const serverURL = 'https://httpbin.org/post';
+const serverURL = 'http://127.0.0.1:12000/';
 
 display.innerHTML = "Password Size: " + passlen.value;
 
@@ -21,7 +21,10 @@ submitButton.onclick = function(){
 
 	requester.onreadystatechange = function(){
 		if(requester.readyState == XMLHttpRequest.DONE && requester.status == 200){
-			console.log(requester.responseText);
+			var server_response = requester.responseText;
+			var json_data = JSON.parse(server_response);
+			console.log(server_response);
+
 		}
 	}
 
