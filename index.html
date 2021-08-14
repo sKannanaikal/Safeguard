@@ -2,15 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Password Generator</title>
+	<title>Safeguard</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div id="applicationDiv">
-		<h2>Password Generator</h2>
-		<p id="passwordDisplay">Password: </p>
-		<input type="range" min="10" max="30" value="20", id="passSize">
-		<p id="passLenDisplay">Password Size: </p>
+		<h2 id=title>Safeguard</h2>
+		<p id="passwordDisplay"></p>
+		<div id="slider">
+			<span style="visibility:  hidden;" id="sizeDisplay"></span> 
+			<input type="range" min="10" max="30" value="20", id="passSize">
+		</div>
 		<button id="subButton" type="button">Generate</button>
 	</div>
 	<script src="main.js"></script>
