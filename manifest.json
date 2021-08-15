@@ -1,0 +1,10 @@
+{
+  "name":"Safeguard",
+  "version":"1.0",
+  "description":"Communicating with the safeguard api this app allows one to generate passwords",
+  "manifest_version":2,
+  "browser_action": {
+    "default_popup":"index.html",
+    "default_icon":"logo.png"
+  }
+}
